@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Shop</title>
+</head>
+<body>
+    {% for category in all_categories %}
+        <p><a href="categories/{{ category.id }}"> {{ category.name }}</a></p>
+    {% endfor%}
+</body>
+</html>
