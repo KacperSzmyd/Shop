@@ -1,15 +1,20 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, get_object_or_404
 from .models import *
 
 def index(request):
     all_categories = Category.objects.all()
-    return render(request, 'index.html', {'all_categories' : all_categories})
+    return render(request, 'index.html', {'categories' : all_categories})
 
 def category(request, id):
+    all_categories = Category.objects.all()
     category_user = Category.objects.get(pk=id)
-    return HttpResponse(category_user)
+    products_by_category = Products.objects.filter(category=category_user)
+    return render(request, 'products_by_category.html', {'categories': all_categories,
+                                          'category' : category_user,
+                                          'products' : products_by_category})
 
 def product(request, id):
-    product_user = Products.objects.get(pk=id)
-    return HttpResponse(product_user)
+    all_categories = Category.objects.all()
+    product_user_or_404 = get_object_or_404(Products, pk=id)
+    return render(request, 'product.html', {'product' : product_user_or_404,
+                                            'categories': all_categories})

@@ -1,0 +1,10 @@
+{% extends 'index.html' %}
+{% block product %}
+{% if products %}
+    {% for item in products  %}
+        <p><a href="/products/{{ item.id }}/">{{ item.name }}</a></p>
+    {% endfor %}
+{% else %}
+    <p>Brak podanej kategorii</p>
+{% endif %}
+{% endblock product %}

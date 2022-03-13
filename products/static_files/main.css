@@ -1,0 +1,20 @@
+body{
+    background-color: whitesmoke;
+}
+
+.top_section{
+    background-color: white;
+    text-align: center;
+    font-size: 20px;
+}
+
+.container{
+    color: black;
+    background-color: white;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}

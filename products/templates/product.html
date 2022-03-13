@@ -1,0 +1,9 @@
+{% extends 'index.html' %}
+{% block product %}
+{% if product %}
+    <h1>{{ product.name }}</h1>
+    <p>Producent: {{ product.producer }}</p>
+    <p>{{ product.description }}</p>
+    <p>{{ product.price }}</p>
+{% endif %}
+{% endblock product %}
