@@ -14,7 +14,31 @@ body{
 }
 
 a{
-    color: black;
+    color: #1b5dd9;
     text-decoration: none;
     font-weight: bold;
+}
+
+.product-image{
+    height: 400px;
+    width: 400px;
+}
+
+img{
+    max-height: 100%;
+    max-width: 100%;
+}
+
+p.description{
+    color: #1b5dd9;
+    font-weight: normal;
+}
+
+p{
+    color: #1b5dd9;
+    font-weight: bold;
+}
+
+h2{
+    color: #1b5dd9;
 }

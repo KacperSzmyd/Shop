@@ -15,7 +15,16 @@
     <div class="container">
         <div class="top_section">
             <h1>Kacper Szmyd</h1>
-            <h2>Sklep z hardware</h2>
+            <a href="{% url 'index' %}"><h2>Sklep z hardware</h2></a>
+            <a href="{% url 'register' %}"><h3>zarejestruj się</h3></a>
+            {% if user.is_authenticated%}
+                <h2>Witaj {{ user.username }}</h2>
+                <p><a href="{% url 'logoutUser' %}">Wyloguj się!</a></p>
+            {% else %}
+                <p><a href="{% url 'login' %}">Zaloguj się!</a></p>
+            {% endif %}
+
+
 {#            <form class="d-flex">#}
 {#                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">#}
 {#                <button class="btn btn-outline-success" type="submit">Search</button>#}

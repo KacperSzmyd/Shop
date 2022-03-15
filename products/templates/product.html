@@ -1,9 +1,18 @@
 {% extends 'index.html' %}
 {% block product %}
 {% if product %}
-    <h1>{{ product.name }}</h1>
-    <p>Producent: {{ product.producer }}</p>
-    <p>{{ product.description }}</p>
-    <p>{{ product.price }}</p>
+    <h2>{{ product.name }}</h2>
+    <div class="row">
+        <div class="col-sm-6 col-md-3">
+            <p>Producent: {{ product.producer }}</p>
+            <p>Cena: {{ product.price }}</p>
+        </div>
+        <div class="col-sm-6 col-md9">
+            <div class="product-image"><img src="/media/{{ product.image }}/"></div>
+        </div>
+    </div>
+    <div class="description">
+        <p>{{ product.description }}</p>
+    </div>
 {% endif %}
 {% endblock product %}
